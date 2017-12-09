@@ -28,10 +28,10 @@ public class MazeView extends ProblemView{
 	private static Color waterColor = new Color(34, 79, 189);
 	
 	// Images
-	public static final Image hamster = Toolkit.getDefaultToolkit().getImage("problems/maze/imgs/hamster.png");	
-	public static final Image cheese = Toolkit.getDefaultToolkit().getImage("problems/maze/imgs/queso.png");	
-	public static final Image cat = Toolkit.getDefaultToolkit().getImage("problems/maze/imgs/cat.png");
-	public static final Image cat2 = Toolkit.getDefaultToolkit().getImage("problems/maze/imgs/cat2.png");
+	public static final Image hamster = Toolkit.getDefaultToolkit().getImage("C:\\Users\\José Carlos\\IdeaProjects\\Practice2IS\\src\\problems\\maze\\imgs\\hamster.png");
+	public static final Image cheese = Toolkit.getDefaultToolkit().getImage("C:\\Users\\José Carlos\\IdeaProjects\\Practice2IS\\src\\problems\\maze\\imgs\\queso.png");
+	public static final Image cat = Toolkit.getDefaultToolkit().getImage("C:\\Users\\José Carlos\\IdeaProjects\\Practice2IS\\src\\problems\\maze\\imgs\\cat.png");
+	public static final Image cat2 = Toolkit.getDefaultToolkit().getImage("C:\\Users\\José Carlos\\IdeaProjects\\Practice2IS\\src\\problems\\maze\\imgs\\cat2.png");
 
 	// Maze and status
 	private Maze maze;						// Maze	

@@ -46,10 +46,28 @@ public class QLearning extends LearningAlgorithm{
 			// Generates a new initial state.
 			 currentState = problem.getRandomState();
 			// Use fix init point for debugging
-			// currentState = problem.getInitialState(); 
+//			 currentState = problem.getInitialState();
 			
 			// Iterates until it finds a final state.
-			 
+
+			do{
+
+				selAction = qTable.getActionMaxValue(currentState);
+				newState = problem.applyAction(currentState, selAction);
+				reward = problem.getTransitionReward(currentState, selAction, newState);
+//				reward = problem.getReward(newState);
+//				System.out.println("------------>>>>>>>>>>" + reward);
+
+				maxQ = qTable.getMaxQValue(newState);
+
+				Q = (1.0 - alpha) * qTable.getQValue(currentState, selAction) + alpha * (reward + gamma * maxQ);
+				qTable.setQValue(currentState, selAction, Q);
+
+				currentState = newState;
+
+			}while(!problem.isFinal(currentState));
+
+
 			 //****************************/
 			 //
 			 // TO DO
@@ -69,7 +87,14 @@ public class QLearning extends LearningAlgorithm{
 			 // 
 			 // Policy must be save in variable policy inherited
 			 // from Learning Algorithm.
-			 //***************************/	
+			 //***************************/
+
+		for (State s : problem.getAllStates()){
+			policy.setAction(s, qTable.getActionMaxValue(s));
+		}
+
+		System.out.println(qTable.toString());
+
 	}
 
 	/** Sets the parameters of the algorithm. */
